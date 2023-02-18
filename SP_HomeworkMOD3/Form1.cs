@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Threading;
 using System.Windows.Forms;
 namespace SP_HomeworkMOD3
@@ -18,7 +18,7 @@ namespace SP_HomeworkMOD3
 
         private void textBoxBeginRange_TextChanged(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)  //цифры и клавиша BackSpace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)  //С†РёС„СЂС‹ Рё РєР»Р°РІРёС€Р° BackSpace
             {
                 e.Handled = true;
             }
@@ -85,7 +85,7 @@ namespace SP_HomeworkMOD3
         public class MyFunctions
         {
             
-            // является ли число простым
+            // СЏРІР»СЏРµС‚СЃСЏ Р»Рё С‡РёСЃР»Рѕ РїСЂРѕСЃС‚С‹Рј
             public static bool checkPrimeNumber(ulong number)
             {
                 if (number < 2)
@@ -106,7 +106,7 @@ namespace SP_HomeworkMOD3
             private Action del;
 
             public MyThread(Action del) => this.del += del;
-            //Запуск
+            //Р—Р°РїСѓСЃРє
             public void Run()
             {
                 if ((thread == null) || (thread.ThreadState == ThreadState.Aborted)
@@ -117,14 +117,14 @@ namespace SP_HomeworkMOD3
                     thread?.Start();
                 }
             }
-            //Остановка потока
+            //РћСЃС‚Р°РЅРѕРІРєР° РїРѕС‚РѕРєР°
             public void Abort()
             {
                 if (thread?.IsAlive == true && thread?.ThreadState != ThreadState.Suspended)
                     thread?.Abort();
             }
 
-            //Приостановка потока
+            //РџСЂРёРѕСЃС‚Р°РЅРѕРІРєР° РїРѕС‚РѕРєР°
             
             [Obsolete]
             public void Suppent()
@@ -133,7 +133,7 @@ namespace SP_HomeworkMOD3
                     thread?.Suspend();
             }
 
-            //Возобновление работы потока
+            //Р’РѕР·РѕР±РЅРѕРІР»РµРЅРёРµ СЂР°Р±РѕС‚С‹ РїРѕС‚РѕРєР°
           
             [Obsolete]
             public void Resume()
@@ -141,7 +141,7 @@ namespace SP_HomeworkMOD3
                 if (thread?.ThreadState == ThreadState.Suspended)
                     thread?.Resume();
             }
-            //Рестарт потока
+            //Р РµСЃС‚Р°СЂС‚ РїРѕС‚РѕРєР°
             public void Restart()
             {
                 if (thread?.ThreadState != ThreadState.Suspended)
